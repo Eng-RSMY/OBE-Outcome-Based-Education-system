@@ -1,0 +1,295 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#" routerLink="''">OBE System</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+   
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item active">
+
+          <button class="btn btn-outline-secondary my-2 my-sm-0 nav-link" routerLink="/home" *ngIf="!(isLoggedIn || isfacultyLoggedIn || isHODLoggedIn || isCOLoggedIn || isAdminLoggedIn)">Home<span class="sr-only">(current)</span></button>
+        </li>
+        <li class="nav-item active">
+
+          <button class="btn btn-outline-secondary my-2 my-sm-0 nav-link" routerLink="/facultyHome" *ngIf="isfacultyLoggedIn"> Faculty Home<span class="sr-only">(current)</span></button>
+        </li>
+        <li class="nav-item active">
+
+          <button class="btn btn-outline-secondary my-2 my-sm-0 nav-link" routerLink="/adminhome" *ngIf="isAdminLoggedIn"> Admin Home<span class="sr-only">(current)</span></button>
+        </li>
+        <li class="nav-item active">
+
+          <button class="btn btn-outline-secondary my-2 my-sm-0 nav-link" routerLink="/course-coordinatorHome" *ngIf="isCOLoggedIn">Course Coordinator Home<span class="sr-only">(current)</span></button>
+        </li>
+
+        <li class="nav-item active">
+
+          <button class="btn btn-outline-secondary my-2 my-sm-0 nav-link" routerLink="/HODhome" *ngIf="isHODLoggedIn"> HOD Home<span class="sr-only">(current)</span></button>
+        </li>
+
+        <li class="nav-item ">
+
+          <button class="btn btn-outline-secondary my-2 my-sm-0 nav-link" routerLink="/course" padding="3px" *ngIf="isfacultyLoggedIn"> create course Outline<span class="sr-only">(current)</span></button>
+        </li>
+
+        <li class="nav-item ">
+
+          <button class="btn btn-outline-secondary my-2 my-sm-0 nav-link" routerLink="/faculty" padding="3px" *ngIf="isLoggedIn">Faculty registration<span class="sr-only">(current)</span></button>
+        </li>
+        <li class="nav-item">
+
+          <button class="btn btn-outline-secondary my-2 my-sm-0 nav-link" routerLink="/question" padding="3px" *ngIf="isfacultyLoggedIn">Creat question<span class="sr-only">(current)</span></button>
+        </li>
+
+      </ul>
+    
+   
+    <!--
+      <ul class="nav-item navbar-nav navbar-right">
+      <li class="nav-item dropdown ml-auto">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sign In
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#" routerLink="/course">course registration</a>
+          <a class="dropdown-item" href="#" routerLink="/faculty">Faculty Registration</a>
+          <a class="dropdown-item" href="#" routerLink="/question">Creat question</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+    </ul>
+    -->
+    <!--
+        <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+        <li>
+          <button type="button" id="dropdownMenu1" class="btn btn-outline-secondary ">Logout <span class="caret "></span></button>
+        </li>
+      </ul>
+    -->
+
+
+
+
+    <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+      <li class="nav-item order-2 order-md-1"><a href="#" class="nav-link" title="settings"><i class="fa fa-cog fa-fw fa-lg"></i></a></li>
+      <li>
+        <button type="button" id="dropdownMenu1" class="btn btn-outline-secondary " *ngIf="( isfacultyLoggedIn || isHODLoggedIn || isCOLoggedIn || isAdminLoggedIn)" (click)="isLogOut()" routerLink="/home">Logout <span class="caret "></span></button>
+      </li>
+
+      <li class="dropdown order-1 ">
+        <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-secondary dropdown-toggle" *ngIf="!(isLoggedIn || isfacultyLoggedIn || isHODLoggedIn || isCOLoggedIn || isAdminLoggedIn)">Login <span class="caret "></span></button>
+        <ul class="dropdown-menu dropdown-menu-right mt-2 log_in_form_container" *ngIf="!(isfacultyLoggedIn || isHODLoggedIn || isCOLoggedIn || isAdminLoggedIn)">
+          <li class="px-3 py-2 ">
+            <form (ngSubmit)="isLogIn()" class="form" role="form" [formGroup]="logInform">
+              <!--
+                <div class="form-group">
+                 <label for="UserId">User ID</label>
+                 <input id="userInput" placeholder="ID" class="form-control form-control-sm" type="text" required="" formControlName="userID">
+               </div>
+               <div class="form-group">
+                 <label for="UserId">Password</label>
+                 <input id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="password" required="" formControlName="password">
+               </div>
+               <div class="form-check">
+                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                 <label class="form-check-label" for="exampleCheck1">Remember Password</label>
+               </div>
+               <hr />
+              -->
+              <div class="margin_top">
+
+
+                <div class="form-group">
+                  <button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#adminModalPassword">Login as Admin</button>
+                </div>
+                <div class="form-group">
+                  <button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#facultyModalPassword">Login as Faculty</button>
+                </div>
+                <div class="form-group">
+                  <button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#hodModalPassword">Login as HOD</button>
+                </div>
+                <div class="form-group">
+                  <button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#COModalPassword">Login as Course-Coordinator</button>
+                </div>
+                <!--
+    <div class="form-group text-center">
+    <small><a href="#" data-toggle="modal" data-target="#modalPassword">Forgot password?</a></small>
+  </div>
+  -->
+              </div>
+            </form>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!--admin log in form-->
+<div id="adminModalPassword" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!--
+
+  -->
+      <div class="modal-header modal-header_back">
+        <h3 class="modal-title text-center">Admin Login</h3>
+        <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">User ID</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ID" required>
+
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+            <label class="custom-control-label" for="customCheck">Remember Password</label>
+          </div>
+          <hr />
+          <button type="submit" class="btn btn-primary btn-block" data-dismiss="modal"(click)="isAdminLogIn()" routerLink="/adminHome">Login</button>
+        </form>
+      </div>
+      <!--
+    <div class="modal-footer">
+    <button type="button" class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button type="button" class="btn btn-primary">Save changes</button>
+  </div>
+  -->
+    </div>
+  </div>
+</div>
+<!--Faculty log in form-->
+<div id="facultyModalPassword" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!--
+
+      -->
+      <div class="modal-header modal-header_back">
+        <h3 class="modal-title text-center">Faculty Login</h3>
+        <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="validationDefault01">User ID</label> 
+            <input type="text" class="form-control" id="validationDefault01" aria-describedby="emailHelp" placeholder="ID">
+
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+            <label class="custom-control-label" for="customCheck">Remember Password</label>
+          </div>
+          <hr />
+          <button type="submit" class="btn btn-primary btn-block" data-dismiss="modal" (click)="isFacultyLogIn()" routerLink="/facultyHome">Login</button>
+        </form>
+      </div>
+      <!--
+        <div class="modal-footer">
+        <button type="button" class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+      -->
+    </div>
+  </div>
+</div>
+      <!--HOD log in form-->
+<div id="hodModalPassword" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!--
+
+      -->
+      <div class="modal-header modal-header_back">
+        <h3 class="modal-title text-center">HOD Login</h3>
+        <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">User ID</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ID" required>
+
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+            <label class="custom-control-label" for="customCheck">Remember Password</label>
+          </div>
+          <hr />
+          <button type="submit" class="btn btn-primary btn-block" data-dismiss="modal" (click)="isHODLogIn()" routerLink="/HODHome">Login</button>
+        </form>
+      </div>
+      <!--
+        <div class="modal-footer">
+        <button type="button" class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+      -->
+    </div>
+  </div>
+</div>
+      <!--CO log in form-->
+<div id="COModalPassword" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!--
+
+      -->
+      <div class="modal-header modal-header_back">
+        <h3 class="modal-title text-center">Co-ordinator Login</h3>
+        <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">User ID</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ID">
+
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+            <label class="custom-control-label" for="customCheck">Remember Password</label>
+          </div>
+          <hr />
+          <button type="submit" class="btn btn-primary btn-block" data-dismiss="modal" (click)="isCourseCoordinatorLogIn()" routerLink="/course-coordinatorHome">Login</button>
+        </form>
+      </div>
+      <!--
+        <div class="modal-footer">
+        <button type="button" class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+      -->
+    </div>
+  </div>
+</div>
+
+
+    
+<!--<footer class="footer bg-dark  footer-dark">
+  <div class="text-white text-center mr-3">
+    ©️Ahsiqur Rahman
+  </div>
+</footer>-->

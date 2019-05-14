@@ -1,0 +1,214 @@
+<div class="container">
+  
+  <img src="assets/images/ulab.gif" class="rounded float-right" alt="ulab image" height="200">
+  <div class="card_holder">
+    <div class="card w-80">
+      <div class="card-header">
+        <h2>Course Outline</h2>
+      </div>
+      <div class="card-body card bg-primary ">
+        <form (ngSubmit)="onSubmit()" class="form-container" [formGroup]="courseRegistration">
+          <div class="form-row d-flex justify-content-around">
+            <div class="form-group col-sm-2">
+              <label for="inputPassword4">Course-Code</label>
+              <select id="inputState" class="form-control course_select " formControlName="courseCode">
+                <option disabled selected>Code</option>
+                <option>CSE 101</option>
+                <option>CSE 201</option>
+                <option>CSE 305</option>
+                <option>CSE 401</option>
+
+
+              </select>
+              <!--
+      <input type="text" class="form-control" id="c_code" placeholder="code">
+    -->
+
+            </div>
+            <div class="form-group col-sm-2">
+              <label for="inputState">Section</label>
+              <select id="inputState" class="form-control course_select " formControlName="section">
+                <option disabled selected>section</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+
+              </select>
+
+            </div>
+            <div class="form-group col-sm-2">
+              <label for="inputState">Term</label>
+              <select id="inputState" class="form-control course_select " formControlName="term">
+                <option disabled selected>term</option>
+                <option>Summer</option>
+                <option>Spring</option>
+                <option>Fall</option>
+
+              </select>
+
+            </div>
+            <!--
+    <div class="form-group col-sm-2">
+    <label for="inputState">Exam Session</label>
+    <select id="inputState" class="form-control course_select " formControlName="session">
+      <option disabled selected>Session</option>
+      <option>Mid</option>
+      <option>Final</option>
+
+
+    </select>
+
+  </div>
+  -->
+
+          </div>
+          <hr />
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Course-Title</label>
+              <select id="inputState" class="form-control course_select " formControlName="courseTitle">
+                <option disabled selected>Title</option>
+                <option>Introduction to Computer Studies</option>
+                <option>Object oriented Programming</option>
+                <option>Algorithm</option>
+                <option>System Analysis and Design</option>
+
+
+              </select>
+              <!--<input type="text" class="form-control" id="course_title" placeholder="title">-->
+            </div>
+            <!--
+              <div class="form-group col-md-6">
+            <label for="inputPassword4">Course-Code</label>
+            <select id="inputState" class="form-control course_select " formControlName="courseCode">
+              <option disabled selected>Code</option>
+              <option>CSE 101</option>
+              <option>CSE 201</option>
+              <option>CSE 305</option>
+              <option>CSE 401</option>
+
+
+            </select>
+            <!--
+    <input type="text" class="form-control" id="c_code" placeholder="code">
+                </div>
+  -->
+           
+              
+                <div class="form-group col-sm-3 ">
+                  <label for="inputState">Lectures</label>
+                  <input type="text" class="form-control " id="lecture_number" placeholder="lecture" formControlName="number_of_lectures">
+
+                </div>
+                <div class="form-group col-sm-3 ">
+                  <label for="inputState">Practicles</label>
+                  <input type="text" class="form-control" id="practicle_number" placeholder="practicle" formControlName="number_of_practicles">
+
+                </div>
+              
+            
+           
+            
+          </div>
+          <div class="form-group col-md-14">
+            <label for="inputState">Credit Hour</label>
+            <select id="inputState" class="form-control course_select">
+              <option disabled selected>Choose...</option>
+              <option>1</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="CourseDescription">Course Description</label>
+            <textarea class="form-control textarea_style" id="c_description" rows="3"></textarea>
+          </div>
+          <hr />
+          <div formArrayName="addCourseObjective">
+            <div *ngFor="let group of courseObjectiveArray.controls;let i = index;" [formGroupName]="i">
+              <div class="form-group">
+                <label for="course Objective">Course objective: {{i+1}}</label>
+                <input type="text" class="form-control" id="c_objective" placeholder="objective" formControlName="course_Objective">
+
+                <div class="btn-toolbar" role="toolbar">
+                  <div class="mr-2">
+                    <button type="button"
+                            class="btn btn-primary sm-2 "
+                            (click)="onAddObjective()">
+                      Add more
+                    </button>
+                  </div>
+                  <div class="mr-2">
+                    <button type="button"
+                            class="btn btn-primary sm-2"
+                            (click)="onRemoveObjective(i)"
+                            [disabled]="">
+                      Remove
+                    </button>
+                  </div>
+
+                </div>
+                <hr />
+              </div>
+            </div>
+          </div>
+
+          <div formArrayName="addCourseOutcome">
+            <div *ngFor="let grp of courseOutcomeArray.controls; let j = index;" [formGroupName]="j">
+              <hr />
+              <div class="form-row">
+                <div class="form-group col-md-10">
+                  <label for="inputEmail4">Course-Outcome: {{j+1}}</label>
+                  <input type="text" class="form-control" id="course_title" placeholder="outcome" formControlName="course_Outcome">
+                </div>
+                <div class="form-group col-sm-2">
+                  <label for="inputState">PLO</label>
+                  <select id="inputState" class="form-control course_select" formControlName="PLO">
+                    <option disabled selected>PLO</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                  </select>
+
+                </div>
+                <div class="btn-toolbar" role="toolbar">
+                  <div class="mr-2">
+                    <button type="button"
+                            class="btn btn-primary sm-2 "
+                            (click)="onAddOutcome()">
+                      Add more
+                    </button>
+                  </div>
+                  <div class="mr-2">
+                    <button type="button"
+                            class="btn btn-primary sm-2"
+                            (click)="onRemoveOutcome(j)">
+                      remove
+                    </button>
+                  </div>
+
+                </div>
+                <hr />
+              </div>
+
+            </div>
+          </div>
+          <hr />
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+        </form>
+    </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,112 @@
+
+<div class="container">
+  <div class="container">
+
+    <div class="card_holder ">
+      <div class="card w-80">
+        <div class="card-header d-flex justify-content-center">
+          <h2>View Student Information</h2>
+        </div>
+
+        <div class="card-body height">
+          <form class="form-container " [formGroup]="viewInfo">
+
+            <div class="form-row d-flex justify-content-around">
+              <div class="form-group col-sm-2">
+                <label for="inputState">Course Code</label>
+                <select id="inputState" class="form-control course_select " formControlName="courseCode">
+                  <option disabled selected>Course code</option>
+                  <option>CSE-101</option>
+                  <option>CSE-201</option>
+                  <option>CSE-301</option>
+                  <option>CSE-302</option>
+                  <option>CSE-401</option>
+
+                </select>
+
+              </div>
+              <div class="form-group col-sm-2">
+                <label for="inputState">Section</label>
+                <select id="inputState" class="form-control course_select " formControlName="section">
+                  <option disabled selected>section</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+
+                </select>
+
+              </div>
+              <div class="form-group col-sm-2">
+                <label for="inputState">Term</label>
+                <select id="inputState" class="form-control course_select " formControlName="term">
+                  <option disabled selected>term</option>
+                  <option>Summer</option>
+                  <option>Spring</option>
+                  <option>Fall</option>
+
+                </select>
+
+              </div>
+              <div class="form-group col-sm-2">
+                <label for="inputState">Batch</label>
+                <select id="inputState" class="form-control course_select " formControlName="batch">
+                  <option disabled selected>term</option>
+                  <option>Summer</option>
+                  <option>Spring</option>
+                  <option>Fall</option>
+
+                </select>
+
+              </div>
+
+
+
+            </div>
+            <hr />
+            <button class="btn btn-primary w-100 p-2" (click)="isShowClicked()">Done</button>
+
+          </form>
+          <hr />
+          <form class="form-container" *ngIf="isShow">
+
+            <div class="container">
+              <h2>Student Info</h2>
+
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>PLO</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Rahat</td>
+                    <td>Hasan</td>
+                    <td>123456</td>
+                    <td>Rahat@example.com</td>
+                    <td>3.5</td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+            <hr />
+            <div class="text-center">
+              <button class="btn btn-primary" (click)="isCloseClicked()">Close</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+

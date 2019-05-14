@@ -1,0 +1,116 @@
+<!--
+  <div class="body">
+<div class="container">
+  <img src="assets/images/ulab.gif" class="rounded float-right" alt="ulab image" height="200">
+  <div class="card_holder">
+    <div class="card w-80">
+      <div class="card-header">
+        <h2>Faculty Registration</h2>
+      </div>
+      <div class="card-body card bg-warning ">
+        <form (ngSubmit)="onSubmit()" class="form-container" [formGroup]="facultyForm">
+          <div class="form-group row">
+            <label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">Faculty Name</label>
+            <div class="col-sm-10">
+              <div class="row">
+                <div class="col">
+                  <input type="text"
+                         class="form-control form-control"
+                         placeholder="First name"
+                         formControlName="firstName"
+                         required>
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control form-control input_box" placeholder="Last name"
+                         required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">Faculty ID</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control form-control" id="f_id" placeholder="ID"
+                     required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">Email</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control form-control" id="f_email"
+                     placeholder="....."
+                     required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="select department" class="col-sm-2 col-form-label col-form-label">Department</label>
+            <div class="col-sm-10">
+              <select class="form-control input_box " id="f_department" required>
+                <option value="" disabled selected>Choose your Department</option>
+                <option>CSE</option>
+                <option>EEE</option>
+                <option>BBA</option>
+                <option>English</option>
+                <option>MSJ</option>
+              </select>
+
+            </div>
+
+          </div>
+          <div class="form-group row">
+            <label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">Contact Detail</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control form-control" id="f_contact" placeholder="....." required>
+            </div>
+          </div> <div class="form-group row">
+            <label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">Office Hour</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control form-control" id="f_schedule" placeholder="....."
+                     required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="colFormLabel" class="col-sm-2 col-form-label ">Phone Number</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control " id="f_number" placeholder="....." required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="colFormLabel" class="col-sm-2 col-form-label ">Choose Courses</label>
+            <div class="col-sm-10" multiple>
+              <select multiple class="form-control input_box " id="f_courses" required>
+
+                <option value="1">CSE-101</option>
+                <option value="2">CSE-201</option>
+                <option value="3">CSE-202</option>
+                <option value="3">CSE-205</option>
+                <option value="3">CSE-301</option>
+              </select>
+
+            </div>
+          </div>
+          <hr />
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
+  </div>
+-->
+<div class="container">
+  <app-assesment-create></app-assesment-create>
+</div>
+<!--
+ <div class="container">
+  <div class="row">
+    <div class="col text-center center_button">
+      <button class="btn btn-success shadow w-100 p-3" (click)="onCreate()" *ngIf="!isShow">+ View Courses</button>
+    </div>
+  </div>
+</div>
+-->

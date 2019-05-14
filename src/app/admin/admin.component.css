@@ -1,0 +1,23 @@
+.side_navbar {
+  width: 200px;
+  height: 100%;
+  font-family: 'Times New Roman', Times, serif;
+  background: #CCCDC0;
+  box-shadow: 0px 0px 10px 0px #000;
+  float: left;
+}
+
+.Hover:hover {
+  background-color: #808080;
+  color: white;
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  /* Increased text to enable scrolling */
+  display: inline-block;
+  vertical-align: top;
+  height: 100%;
+  float: left;
+  overflow: auto;
+}

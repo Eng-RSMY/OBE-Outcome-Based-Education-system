@@ -1,0 +1,236 @@
+<div class="container">
+  <img src="assets/images/ulab.gif" class="rounded float-right" alt="ulab image" height="200">
+  <div class="card_holder">
+    <div class="card w-80">
+      <div class="card-header d-flex justify-content-center">
+        <h2>Creat Question</h2>
+      </div>
+      <div class="card-body card bg-primary ">
+        <form (ngSubmit)="onSubmit()" class="form-container" [formGroup]="questionForm">
+
+          <!-- <div [formGroup]="questionForm">
+    <div class="form-group" [ngClass]="{'alert alert-danger' :  questionForm.get('question').errors &&(questionForm.get('question').touched || questionForm.get('question').dirty)}">
+      <label for="CourseDescription">Question Description</label>
+      <textarea formControlName="question" class="form-control textarea_style" id="q_description" rows="3"></textarea>
+      <span class="help-block" *ngIf="questionForm.get('question').errors &&(questionForm.get('question').touched || questionForm.get('question').dirty)">
+        <span *ngIf="questionForm.get('question').errors.required">
+          Question in required!!!!
+        </span>
+      </span>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-sm-2" [ngClass]="{'alert alert-danger' :  questionForm.get('questionNumber').errors &&(questionForm.get('questionNumber').touched || questionForm.get('questionNumber').dirty)}">
+        <label for="inputState">NO.</label>
+        <input formControlName="questionNumber" type="text" class="form-control" id="c_objective" placeholder="..">
+        <span class="help-block" *ngIf="questionForm.get('questionNumber').errors &&(questionForm.get('questionNumber').touched || questionForm.get('questionNumber').dirty)">
+          <span *ngIf="questionForm.get('questionNumber').errors.required">
+            Number is required!!!!
+          </span>
+        </span>
+      </div>
+      <div class="form-group col-sm-2" [ngClass]="{'alert alert-danger' :  questionForm.get('CO').errors &&(questionForm.get('CO').touched || questionForm.get('CO').dirty)}">
+        <label for="inputState">CO</label>
+        <select formControlName="CO" id="inputState" class="form-control course_select ">
+          <option disabled selected>CO</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+        </select>
+        <span class="help-block" *ngIf="questionForm.get('CO').errors &&(questionForm.get('CO').touched || questionForm.get('CO').dirty)">
+          <span *ngIf="questionForm.get('CO').errors.required">
+            CO is required!!!!
+          </span>
+        </span>
+
+      </div>
+      <div class="form-group col-sm-2" [ngClass]="{'alert alert-danger' :  questionForm.get('CL').errors &&(questionForm.get('CL').touched || questionForm.get('CL').dirty)}">
+        <label for="inputState">CL</label>
+        <select formControlName="CL" id="inputState" class="form-control course_select ">
+          <option disabled selected>CL</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+        </select>
+        <span class="help-block" *ngIf="questionForm.get('CL').errors &&(questionForm.get('CL').touched || questionForm.get('CL').dirty)">
+          <span *ngIf="questionForm.get('CL').errors.required">
+            CL is required!!!!
+          </span>
+        </span>
+      </div>
+      <div class="form-group col-sm-2" [ngClass]="{'alert alert-danger' :  questionForm.get('mark').errors &&(questionForm.get('mark').touched || questionForm.get('mark').dirty)}">
+        <label for="inputState">Mark</label>
+        <input formControlName="mark" type="text" class="form-control question_input" id="c_objective" placeholder="..">
+        <span class="help-block" *ngIf="questionForm.get('mark').errors &&(questionForm.get('mark').touched || questionForm.get('mark').dirty)">
+          <span *ngIf="questionForm.get('mark').errors.required">
+            mark is required!!!!
+          </span>
+        </span>
+      </div>
+
+    </div>
+  </div>
+
+
+  <hr /> -->
+          <!--add question part--------------------------------------------------->
+          <div class="form-row d-flex justify-content-around">
+            <div class="form-group col-sm-2">
+              <label for="inputState">Course Code</label>
+              <select id="inputState" class="form-control course_select " formControlName="courseCode">
+                <option disabled selected>Course code</option>
+                <option>CSE-101</option>
+                <option>CSE-201</option>
+                <option>CSE-301</option>
+                <option>CSE-302</option>
+                <option>CSE-401</option>
+
+              </select>
+
+            </div>
+            <div class="form-group col-sm-2">
+              <label for="inputState">Section</label>
+              <select id="inputState" class="form-control course_select " formControlName="section">
+                <option disabled selected>section</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+
+              </select>
+
+            </div>
+            <div class="form-group col-sm-2">
+              <label for="inputState">Term</label>
+              <select id="inputState" class="form-control course_select " formControlName="term">
+                <option disabled selected>term</option>
+                <option>Summer</option>
+                <option>Spring</option>
+                <option>Fall</option>
+
+              </select>
+
+            </div>
+            <div class="form-group col-sm-2">
+              <label for="inputState">Exam Session</label>
+              <select id="inputState" class="form-control course_select " formControlName="term">
+                <option disabled selected>Session</option>
+                <option>Mid</option>
+                <option>Final</option>
+              
+
+              </select>
+
+            </div>
+
+          </div>
+          <hr />
+          <div formArrayName="addQuestion">
+
+            <div *ngFor="let group of QuestionArray.controls;let i = index;" [formGroupName]="i">
+              <div class="form-group">
+
+                <h3 class='text-center'>Question :{{i+1}}</h3>
+                <label for="CourseDescription">Question Description</label>
+                <textarea formControlName="questionDescription" class="form-control textarea_style" id="q_description" rows="3"></textarea>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-sm-2">
+                  <label for="inputState">NO.</label>
+                  <input formControlName="number" type="text" class="form-control" id="c_objective" placeholder="..">
+
+                </div>
+                <div class="form-group col-sm-2">
+                  <label for="inputState">CO</label>
+                  <select id="inputState" class="form-control course_select " formControlName="courseOutcome">
+                    <option disabled selected>CO</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                  </select>
+
+                </div>
+                <div class="form-group col-sm-2">
+                  <label for="inputState">CL</label>
+                  <select id="inputState" class="form-control course_select " formControlName="cognitiveLevel">
+                    <option disabled selected>CL</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                  </select>
+
+                </div>
+                <div class="form-group col-sm-2">
+                  <label for="inputState">Mark</label>
+                  <input type="text" class="form-control question_input" id="c_objective" placeholder=".." formControlName="marks">
+
+                </div>
+
+              </div>
+              <div class="btn-toolbar" role="toolbar">
+                <div class="mr-2">
+                  <button type="button"
+                          class="btn btn-primary sm-2 "
+                          (click)="onAddQuestion()">
+                    Add more
+                  </button>
+                </div>
+                <div class="mr-2">
+                  <button type="button"
+                          class="btn btn-primary sm-2"
+                          (click)="onRemoveQuestion(i)">
+                    remove
+                  </button>
+                </div>
+
+              </div>
+              <hr />
+            </div>
+
+          </div>
+
+          <hr />
+
+          <button type="submit" class="btn btn-primary btn-lg btn-block" (click)="onSubmit()">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>

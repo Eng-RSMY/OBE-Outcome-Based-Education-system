@@ -1,0 +1,133 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: rgba(229, 227, 220, 0.46);
+  font-family: times;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  
+  
+}
+html {
+  height: 100%;
+}
+.course_info_holder {
+  padding: 30px;
+  border-radius: 10px;
+  border: 3px solid #808080;
+  width: 650px;
+}
+
+.card_holder {
+
+  position: absolute;
+}
+.course_card_holder {
+  padding: 30px;
+  
+}
+
+.responsive {
+  height: auto;
+}
+
+h2 {
+  color: #1869d9;
+}
+.full-height {
+  height: 100%;
+  background:#0094ff
+}
+
+.form-container {
+  background: #CCCDC0;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px #000;
+  width: 700px;
+}
+.carousel {
+  padding: 30px;
+  
+  width: 100%;
+  box-shadow: 0px 0px 10px 0px #000;
+}
+.log_in_form_container {
+  /*position: absolute;
+  top: 15vh;
+    padding: 30px;
+   border-radius: 10px;
+  */
+  box-shadow: 0px 0px 10px 0px #000;
+  background: #CCCDC0;
+  width: 250px;
+  height: 350px;
+}
+.button_shadow {
+  box-shadow: 0px 0px 10px 0px #000;
+
+}
+
+
+.input_box {
+  border: 1px solid #808080;
+}
+.question_box {
+  border: 1px solid #808080;
+  padding: 30px;
+  background-color: rgba(229, 227, 220, 0.46);
+}
+input[type=text] {
+  width: 100%;
+  border: 1px solid #808080;
+  
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input[type=email] {
+  width: 100%;
+  border: 1px solid #808080;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+input[type=password] {
+
+  border: 1px solid #808080;
+
+  
+  box-sizing: border-box;
+}
+.textarea_style {
+  border: 1px solid #808080;
+}
+
+select {
+  width: 100%;
+  border: 1px solid #808080;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.course_select {
+  width: 100%;
+  border: 1px solid #808080;
+  
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.question_input {
+  width: 100%;
+  border: 1px solid #808080;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+li
+{
+  margin:3px;
+}
+footer {
+  height: 50px;
+  
+}

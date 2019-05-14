@@ -1,0 +1,23 @@
+<div class="side_navbar rounded-right">
+  <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    <a class="nav-link active Hover" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true" (click)=" isAssignClicked()">Assign Course</a>
+    <a class="nav-link Hover" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false" (click)="isDropClicked()">Drop Course</a>
+    <a class="nav-link Hover" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false" (click)="isView_student_info_Clicked()">View Student Information</a>
+    <a class="nav-link Hover" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false" (click)="isView_faculty_info_Clicked()">View Faculty Information</a>
+  </div>
+ 
+</div>
+<div class="main">
+  <div class="" *ngIf="isAssign_course">
+    <app-assign-course></app-assign-course>
+  </div>
+  <div class="" *ngIf="isDrop_course">
+    <app-drop-course></app-drop-course>
+  </div>
+  <div class="" *ngIf="isView_student_Info">
+    <app-co-view-student-info></app-co-view-student-info>
+  </div>
+  <div class="" *ngIf="isView_faculty_Info">
+    <app-co-view-faculty-info></app-co-view-faculty-info>
+  </div>
+</div>

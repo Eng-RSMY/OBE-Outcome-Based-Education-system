@@ -1,0 +1,21 @@
+.body {
+  margin-left: 0px;
+  padding-left: 0px;
+  float: left;
+
+}
+
+
+.center_button {
+  margin-left: 400px;
+  margin-top: 200px;
+}
+
+.shadow {
+  box-shadow: 0px 0px 5px 0px #000;
+  height: 150px;
+}
+.height {
+  overflow-y: scroll;
+  height: 550px;
+}

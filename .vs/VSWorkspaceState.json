@@ -1,0 +1,18 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\course-coordinator",
+    "\\src\\app\\course-coordinator\\assign-course",
+    "\\src\\app\\course-coordinator\\co-view-faculty-info",
+    "\\src\\app\\course-coordinator\\co-view-student-info",
+    "\\src\\app\\course-coordinator\\drop-course",
+    "\\src\\app\\course-registration",
+    "\\src\\app\\header",
+    "\\src\\app\\hod",
+    "\\src\\app\\hod\\hod-view-info"
+  ],
+  "SelectedNode": "\\src\\app\\course-coordinator\\co-view-student-info\\co-view-student-info.component.ts",
+  "PreviewInSolutionExplorer": false
+}

@@ -1,0 +1,30 @@
+<div class="side_navbar rounded-right overflow-auto">
+  <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    <a class="nav-link active Hover" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"(click)="isHomeClicked()">Home</a>
+    <a class="nav-link Hover" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"(click)="isViewClicked()">View Student Information</a>
+    <a class="nav-link Hover" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"(click)="isNotificationClicked()">Notification</a>
+    <a class="nav-link Hover" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false" (click)="isManualClicked()">Manual</a>
+  </div>
+  <!--
+     <div class="tab-content" id="v-pills-tabContent">
+     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">...</div>
+     <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+     <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+     <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+   </div>
+  -->
+</div>
+<div class="main">
+  <div class=""*ngIf="isHome">
+    <app-hod-home></app-hod-home>
+  </div>
+  <div class="" *ngIf="isManual">
+    <app-hod-manual></app-hod-manual>
+  </div>
+  <div class="" *ngIf="isViewInfo">
+    <app-hod-view-info></app-hod-view-info>
+  </div>
+  <div class="" *ngIf="isNotification">
+    <app-hod-notification></app-hod-notification>
+  </div>
+</div>

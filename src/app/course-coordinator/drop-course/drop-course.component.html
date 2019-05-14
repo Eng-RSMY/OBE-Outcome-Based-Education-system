@@ -1,0 +1,103 @@
+<div class="container">
+  <div class="container">
+
+    <div class="card_holder ">
+      <div class="card w-80">
+        <div class="card-header d-flex justify-content-center">
+          <h2>Drop Course</h2>
+        </div>
+
+        <div class="card-body height">
+          <form class="form-container " [formGroup]="drop_course">
+            <div class="form-row d-flex justify-content-around">
+              <div class="form-group col-md-6">
+                <label for="inputState">Faculty Name</label>
+                <select id="inputState" class="form-control course_select " formControlName="faculty_name">
+                  <option disabled selected>Name</option>
+                  <option>MD.Rakib Hossain</option>
+                  <option>Dr.Nafees Mnsoor</option>
+
+                </select>
+              </div>
+              <div class="form-group col-md-4 ">
+                <label for="inputState">Department</label>
+                <select id="inputState" class="form-control course_select " formControlName="courseCode">
+                  <option disabled selected>Department</option>
+                  <option>CSE-101</option>
+                  <option>CSE-201</option>
+                  <option>CSE-301</option>
+                  <option>CSE-302</option>
+                  <option>CSE-401</option>
+
+                </select>
+
+              </div>
+            </div>
+            <div class="form-row d-flex justify-content-around">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Course-Title</label>
+                <select id="inputState" class="form-control course_select " formControlName="courseTitle">
+                  <option disabled selected>Title</option>
+                  <option>Introduction to Computer Studies</option>
+                  <option>Object oriented Programming</option>
+                  <option>Algorithm</option>
+                  <option>System Analysis and Design</option>
+
+
+                </select>
+                <!--<input type="text" class="form-control" id="course_title" placeholder="title">-->
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputState">Course Code</label>
+                <select id="inputState" class="form-control course_select " formControlName="courseCode">
+                  <option disabled selected>Course code</option>
+                  <option>CSE-101</option>
+                  <option>CSE-201</option>
+                  <option>CSE-301</option>
+                  <option>CSE-302</option>
+                  <option>CSE-401</option>
+
+                </select>
+
+              </div>
+            </div>
+            <div class="form-row d-flex justify-content-between">
+
+              <div class="form-group col-sm-2 space">
+                <label for="inputState">Section</label>
+                <select id="inputState" class="form-control course_select " formControlName="section">
+                  <option disabled selected>section</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+
+                </select>
+
+              </div>
+              <div class="form-group col-sm-2 space_right">
+                <label for="inputState">Term</label>
+                <select id="inputState" class="form-control course_select " formControlName="term">
+                  <option disabled selected>term</option>
+                  <option>Summer</option>
+                  <option>Spring</option>
+                  <option>Fall</option>
+
+                </select>
+
+              </div>
+
+
+
+
+            </div>
+            <hr />
+            <button type="submit"class="btn btn-primary w-100 p-2"><h4>Drop</h4></button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
